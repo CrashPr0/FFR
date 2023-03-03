@@ -29,8 +29,25 @@ public class Conductor : MonoBehaviour
 
     //an AudioSource attached to this GameObject that will play the music
     public AudioSource musicSource;
-    //Used to address the current state within the Animator using the Play() function
-    public int currentState;
+ 
+    //The current relative position of the song within the loop measured between 0 and 1.
+    public float loopPositionInAnalog;
+
+    //Conductor instance
+    public static Conductor instance;
+
+    //the number of beats in each loop
+    public float beatsPerLoop;
+
+    //the total number of loops completed since the looping clip first started
+    public int completedLoops = 0;
+
+    //The current position of the song within the loop in beats.
+    public float loopPositionInBeats;
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         //Load the AudioSource attached to the Conductor GameObject
@@ -49,6 +66,12 @@ public class Conductor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //calculate the loop position
+        if (songPositionInBeats >= (completedLoops + 1) * beatsPerLoop)
+            completedLoops++;
+        loopPositionInBeats = songPositionInBeats - completedLoops * beatsPerLoop;
+
+        loopPositionInAnalog = loopPositionInBeats / beatsPerLoop;
         //determine how many seconds since the song started
         songPosition = (float)(AudioSettings.dspTime - dspSongTime - firstBeatOffset);
 

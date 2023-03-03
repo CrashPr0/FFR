@@ -271,16 +271,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e62aeecb5080c24b880109579018bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songBpm: 0
+  songBpm: 117
   secPerbeat: 0
   secPerBeat: 0
   firstBeatOffset: 0
   songPosition: 0
   songPositionInBeats: 0
   dspSongTime: 0
-  musicSource: {fileID: 0}
-  animator: {fileID: 0}
-  currentState: 0
+  musicSource: {fileID: 603385290}
+  loopPositionInAnalog: 0
+  beatsPerLoop: 0
+  completedLoops: 0
+  loopPositionInBeats: 0
 --- !u!82 &603385290
 AudioSource:
   m_ObjectHideFlags: 0
@@ -402,6 +404,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1126726343}
   - component: {fileID: 1126726342}
+  - component: {fileID: 1126726345}
+  - component: {fileID: 1126726344}
   m_Layer: 0
   m_Name: fish
   m_TagString: Untagged
@@ -469,10 +473,44 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126726341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.02, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1126726344
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126726341}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8178a22e933c9104287062c91b2d4c07, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1126726345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126726341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fb414623b4fc54ebeb6c6a65f2529d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  currentState: 0
