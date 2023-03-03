@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rhythmGameCode : MonoBehaviour
+public class Conductor : MonoBehaviour
 {
     // Song beats per minute
     //This is determined by the song you're trying to sync up to
@@ -13,7 +13,8 @@ public class rhythmGameCode : MonoBehaviour
     float[] notes;
     //The number of seconds for each song beat
     public float secPerBeat;
-
+    //The offset to the first beat of the song in seconds
+    public float firstBeatOffset;
     //the index of the next note to be spawned
     int nextIndex = 0;
     //Current song position, in seconds
@@ -28,7 +29,8 @@ public class rhythmGameCode : MonoBehaviour
 
     //an AudioSource attached to this GameObject that will play the music
     public AudioSource musicSource;
-    // Start is called before the first frame update
+    //Used to address the current state within the Animator using the Play() function
+    public int currentState;
     void Start()
     {
         //Load the AudioSource attached to the Conductor GameObject
@@ -48,10 +50,11 @@ public class rhythmGameCode : MonoBehaviour
     void Update()
     {
         //determine how many seconds since the song started
-        songPosition = (float)(AudioSettings.dspTime - dspSongTime);
+        songPosition = (float)(AudioSettings.dspTime - dspSongTime - firstBeatOffset);
 
-    
+
         //determine how many beats since the song started
         songPositionInBeats = songPosition / secPerBeat;
-       
+
+    }
 }
