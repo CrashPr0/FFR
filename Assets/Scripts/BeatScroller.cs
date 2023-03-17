@@ -5,13 +5,14 @@ using UnityEngine;
 public class BeatScroller : MonoBehaviour
 {
     public float beatTempo;
-
+    public float songPosition;
     public bool hasStarted;
 
     // Start is called before the first frame update
     void Start()
     {
         beatTempo = beatTempo / 60f;
+       
     }
 
     // Update is called once per frame
@@ -19,10 +20,11 @@ public class BeatScroller : MonoBehaviour
     {
         if (!hasStarted)
         {
-            if (Input.anyKeyDown)
-            {
-                hasStarted= true;
-            }
+            //if (Input.anyKeyDown)
+            //{
+            //    hasStarted= true;
+
+            //}
         }
         else
         {
