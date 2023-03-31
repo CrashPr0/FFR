@@ -5,8 +5,9 @@ using UnityEngine;
 public class NoteObject : MonoBehaviour
 {
     public bool canBePressed;
-
     public KeyCode keyToPress;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class NoteObject : MonoBehaviour
                 //GameManager.instance.NoteHit();
                 if (Mathf.Abs(transform.position.y) > 0.25)     
                 {
-                    GameManager.instance.NormalHit();
+                       GameManager.instance.NormalHit();
                 } else if(Mathf.Abs(transform.position.y) > .05f){
                     Debug.Log("Good");
                     GameManager.instance.GoodHit();
