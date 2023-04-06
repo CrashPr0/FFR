@@ -5,15 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Food
-  - Activator
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Drops
   - Water
   - UI
-  - 
+  - Border
   - 
   - 
   - 
@@ -40,12 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: fish
+    uniqueID: 3810985409
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< Updated upstream
   - name: Arrows
     uniqueID: 1641472013
     locked: 0
   - name: Background
     uniqueID: 3831321793
     locked: 0
+=======
+>>>>>>> Stashed changes
