@@ -112,7 +112,7 @@ MonoBehaviour:
   movementCost: 1
   foodBonus: 10
   moneyFrequency: 30
-  money: {fileID: 8208206233752055420, guid: 202d1423f4036c84a830f574b551b683, type: 3}
+  money: {fileID: 7870349504237341923, guid: b1fb44049db279c498afc9bfa2908e79, type: 3}
 --- !u!50 &3747305246035119951
 Rigidbody2D:
   serializedVersion: 4
