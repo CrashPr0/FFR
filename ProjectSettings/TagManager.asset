@@ -10,10 +10,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - WorldBorder
   - Water
   - UI
-  - 
+  - Drop
   - 
   - 
   - 

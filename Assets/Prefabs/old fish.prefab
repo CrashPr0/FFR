@@ -96,16 +96,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 3747305246035119947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afbe1e475c5792c478356a48ad8f159b, type: 3}
+  m_Script: {fileID: 11500000, guid: c935a26aec01f7548aeac8313771cc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.01
+  speed: 1
   acceleration: 1
-  minInterval: 0.2
-  maxInterval: 2
+  minInterval: 1
+  maxInterval: 8
   spriteRenderer: {fileID: 3747305246035119949}
-  swimTime: 1
   targetTag: Food
+  changeDirectionMin: 1
+  changeDirectionMax: 7
+  stomachSize: 50
+  hungerThreshold: 0.8
+  movementCost: 1
+  foodBonus: 10
+  moneyFrequency: 30
+  money: {fileID: 8208206233752055420, guid: 202d1423f4036c84a830f574b551b683, type: 3}
 --- !u!50 &3747305246035119951
 Rigidbody2D:
   serializedVersion: 4
