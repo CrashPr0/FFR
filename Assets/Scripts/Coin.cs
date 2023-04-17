@@ -6,8 +6,8 @@ public class Coin : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] private float blinkInterval = 2f;
-    [SerializeField] private float blinkTimes;
     [SerializeField] private float blinkMax = 5f;
+    private float blinkTimes;
     private SpriteRenderer spriteRenderer;
 
     void Start()
@@ -28,7 +28,12 @@ public class Coin : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
+        MoneyDisplay moneyDisplay = FindObjectOfType<MoneyDisplay>();
+        if (moneyDisplay != null)
+        {
+            moneyDisplay.AddMoney(10);
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator BlinkAndDestroyCoroutine()
